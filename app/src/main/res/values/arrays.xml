@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <integer-array name="HowManyAlfred">
+    <string-array name="HowManyAlfred">
         <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
-    </integer-array>
+    </string-array>
 
 </resources>

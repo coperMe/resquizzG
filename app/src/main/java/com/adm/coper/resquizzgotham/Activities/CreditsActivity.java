@@ -1,9 +1,11 @@
-package com.adm.coper.resquizzgotham;
+package com.adm.coper.resquizzgotham.Activities;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.adm.coper.resquizzgotham.R;
 
 
 public class CreditsActivity extends Activity {

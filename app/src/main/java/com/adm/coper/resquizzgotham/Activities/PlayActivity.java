@@ -1,24 +1,27 @@
-package com.adm.coper.resquizzgotham;
+package com.adm.coper.resquizzgotham.Activities;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.adm.coper.resquizzgotham.R;
 
-public class SettingsActivity extends Activity {
+
+public class PlayActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_play);
         getActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_settings, menu);
+        getMenuInflater().inflate(R.menu.menu_play, menu);
         return true;
     }
 
