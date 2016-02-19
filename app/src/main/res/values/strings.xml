@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Resquizz Gotham</string>
+
+    <string name="action_settings">Settings</string>
+    
+    <string name="title_activity_play">Play</string>
+    <string name="title_activity_scores">Scores</string>
+    <string name="title_activity_settings">Settings</string>
+    
+    <string name="playButtonText">Play</string>
+    <string name="scoresButtonText">Scores</string>
+    <string name="settingsButtonText">Settings</string>
+</resources>
