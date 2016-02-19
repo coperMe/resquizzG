@@ -50,7 +50,6 @@
         android:layout_height="wrap_content"
         android:background="@color/riddler_green"
         android:text="@string/btAddFriend"
-        android:textColor="@android:color/white"
         android:textStyle="bold"
         android:id="@+id/addFriendButton"
         android:layout_below="@+id/spinner"
@@ -77,5 +76,17 @@
         android:onClick="onClickSaveButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addFriendButton"
+        android:layout_alignParentLeft="true">
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lvFriendsList">
+        </ListView>
+    </ScrollView>
 
 </RelativeLayout>

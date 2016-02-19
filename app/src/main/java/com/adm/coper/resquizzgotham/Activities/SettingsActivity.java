@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 
 import com.adm.coper.resquizzgotham.POJO.User;
@@ -20,10 +23,26 @@ public class SettingsActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ListView lv = (ListView) findViewById(R.id.lvFriendsList);
+        Spinner sp = (Spinner) findViewById(R.id.spinner);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
         getActionBar().setDisplayHomeAsUpEnabled(true);
+
         this.data = (User) getIntent().getExtras().get("dataUser");
+
+        /*
+        // This is the array adapter, it takes the context of the activity as a
+        // first parameter, the type of list view as a second parameter and your
+        // array as a third parameter.
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+                this,
+                android.R.layout.simple_list_item_1,
+                data.getFriends());
+
+        lv.setAdapter(arrayAdapter);*/
     }
 
     @Override
