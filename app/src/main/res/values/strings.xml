@@ -7,7 +7,17 @@
     <string name="title_activity_scores">Scores</string>
     <string name="title_activity_settings">Settings</string>
     
-    <string name="playButtonText">Play</string>
-    <string name="scoresButtonText">Scores</string>
-    <string name="settingsButtonText">Settings</string>
+    <string name="btPlayText">Play</string>
+    <string name="btScoresText">Scores</string>
+    <string name="btSettingsText">Settings</string>
+    <string name="title_activity_credits">CreditsActivity</string>
+
+    <string name="authorsText">Author</string>
+    <string name="authorsContent">David García Molino</string>
+
+    <string name="versionInfo">Version: 0.1</string>
+
+    <string name="tvSettingsName">Name:</string>
+    <string name="tvSettingsHowMany">How many times can you call Alfred:</string>
+    <string name="btAddFriend">Add friend</string>
 </resources>

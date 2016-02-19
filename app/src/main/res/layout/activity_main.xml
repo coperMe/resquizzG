@@ -9,23 +9,24 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/playButtonText"
+        android:text="@string/btPlayText"
         android:id="@+id/playButton"
         android:onClick="onClickButton"
-        android:textColor="#86c580"
         android:textStyle="bold"
+        android:textColor="@color/riddler_purple"
         android:background="@android:color/black"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_above="@+id/scoresButton"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="83dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/scoresButtonText"
+        android:text="@string/btScoresText"
         android:id="@+id/scoresButton"
         android:onClick="onClickButton"
-        android:textColor="#86c580"
         android:textStyle="bold"
+        android:textColor="@color/riddler_purple"
         android:background="@android:color/black"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true" />
@@ -33,13 +34,14 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/settingsButtonText"
+        android:text="@string/btSettingsText"
         android:id="@+id/settingsButton"
         android:onClick="onClickButton"
-        android:textColor="#86c580"
         android:textStyle="bold"
+        android:textColor="@color/riddler_purple"
         android:background="@android:color/black"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_below="@+id/scoresButton"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="83dp" />
 
 </RelativeLayout>

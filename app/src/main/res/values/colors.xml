@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="riddler_green" type="color">#86c580</item>
+    <item name="riddler_purple" type="color">#bf80c5</item>
+
+</resources>
