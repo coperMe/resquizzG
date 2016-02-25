@@ -18,7 +18,7 @@
     <string name="versionInfo">Version: 0.1</string>
 
     <string name="tvSettingsName">Name:</string>
-    <string name="etNameHint">Introduce your nickname</string>
+    <string name="etNameHint">Put your nickname</string>
     <string name="tvSettingsHowMany">How many times can you call Alfred:</string>
     <string name="btAddFriend">Add friend</string>
     <string name="btSaveText">Save</string>

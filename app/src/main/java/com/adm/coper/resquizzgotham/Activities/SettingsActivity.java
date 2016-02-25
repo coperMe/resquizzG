@@ -1,20 +1,19 @@
 package com.adm.coper.resquizzgotham.Activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.ScrollView;
 import android.widget.Spinner;
 
 import com.adm.coper.resquizzgotham.POJO.User;
 import com.adm.coper.resquizzgotham.R;
-
-import java.util.ArrayList;
 
 
 public class SettingsActivity extends Activity {
@@ -75,6 +74,39 @@ public class SettingsActivity extends Activity {
         data.setName(et.getText().toString());
         data.setNumCalls(sp.getSelectedItemPosition());
         data.setFriends(new User().getFriends());
+
+    }
+
+    public void onClickAddButton(View v){
+
+
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(SettingsActivity.this);
+        alertDialog.setTitle("FRIEND");
+        alertDialog.setMessage("Enter your friend's name");
+
+        final EditText input = new EditText(SettingsActivity.this);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                                                                     LinearLayout.LayoutParams.MATCH_PARENT);
+        input.setLayoutParams(lp);
+        alertDialog.setView(input);
+        alertDialog.setIcon(R.drawable.addfriendicon);
+
+        alertDialog.setPositiveButton("ADD",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        data.getFriends().add(input.getText().toString());
+                    }
+                });
+
+        alertDialog.setNegativeButton("CANCEL",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+        alertDialog.show();
+
 
     }
 }
