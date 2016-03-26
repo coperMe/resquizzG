@@ -6,18 +6,28 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.adm.coper.resquizzgotham.POJO.User;
 import com.adm.coper.resquizzgotham.R;
 
 
 public class MainActivity extends Activity {
+    private User player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+
+        TextView tv = (TextView) findViewById(R.id.tvPlayersName);
+        TextView tv2 = (TextView) findViewById(R.id.tvNumCalls);
+        this.player = new User();
+        this.player.getFriends().add("Jane Doe");
+        tv.setText(player.getName());
+        tv2.setText(String.valueOf(player.getNumCalls()));
+
+        getActionBar().show();
     }
 
     @Override
@@ -36,6 +46,8 @@ public class MainActivity extends Activity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent inn = new Intent(this,CreditsActivity.class);
+            startActivity(inn);
             return true;
         }
 
@@ -53,11 +65,11 @@ public class MainActivity extends Activity {
                 inn = new Intent(this, ScoresActivity.class);
                 break;
             case R.id.settingsButton:
-                User us = new User();
-                Bundle bun = new Bundle();
+                //Bundle bun = new Bundle();
                 inn = new Intent (this, SettingsActivity.class);
-                bun.putSerializable("dataUser", us);
-                inn.putExtras(bun);
+                //bun.putSerializable("dataUser", this.player);
+                inn.putExtra("player",this.player);
+                //inn.putExtra("dataUser", this.player);
                 break;
         }
 

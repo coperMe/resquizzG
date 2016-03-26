@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -15,6 +16,8 @@ import android.widget.Spinner;
 import com.adm.coper.resquizzgotham.POJO.User;
 import com.adm.coper.resquizzgotham.R;
 
+import java.util.ArrayList;
+
 
 public class SettingsActivity extends Activity {
 
@@ -22,26 +25,24 @@ public class SettingsActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        ListView lv = (ListView) findViewById(R.id.lvFriendsList);
-        Spinner sp = (Spinner) findViewById(R.id.spinner);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        ListView lv = (ListView) findViewById(R.id.lvFriendsList);
+        EditText et = (EditText) findViewById(R.id.etSettingsName);
+        Spinner sp = (Spinner) findViewById(R.id.spinner);
+
         getActionBar().setDisplayHomeAsUpEnabled(true);
+        this.data = (User) getIntent().getSerializableExtra("player");
 
-        this.data = (User) getIntent().getExtras().get("dataUser");
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, new ArrayList<String>());
 
-        /*
-        // This is the array adapter, it takes the context of the activity as a
-        // first parameter, the type of list view as a second parameter and your
-        // array as a third parameter.
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
-                this,
-                android.R.layout.simple_list_item_1,
-                data.getFriends());
+        et.setText(data.getName());
+        sp.setSelection(data.getNumCalls());
+        lv.setAdapter(adapter);
 
-        lv.setAdapter(arrayAdapter);*/
     }
 
     @Override
@@ -70,15 +71,15 @@ public class SettingsActivity extends Activity {
 
         EditText et = (EditText) findViewById(R.id.etSettingsName);
         Spinner sp = (Spinner) findViewById(R.id.spinner);
+        ListView lv = (ListView) findViewById(R.id.lvFriendsList);
 
         data.setName(et.getText().toString());
         data.setNumCalls(sp.getSelectedItemPosition());
-        data.setFriends(new User().getFriends());
+        //data.setFriends();
 
     }
 
     public void onClickAddButton(View v){
-
 
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(SettingsActivity.this);
         alertDialog.setTitle("FRIEND");
@@ -89,12 +90,14 @@ public class SettingsActivity extends Activity {
                                                                      LinearLayout.LayoutParams.MATCH_PARENT);
         input.setLayoutParams(lp);
         alertDialog.setView(input);
-        alertDialog.setIcon(R.drawable.addfriendicon);
+        //alertDialog.setIcon(R.drawable.ic_action_addfriendicon);
 
         alertDialog.setPositiveButton("ADD",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
+                        ListView lv = (ListView) findViewById(R.id.lvFriendsList);
                         data.getFriends().add(input.getText().toString());
+                        lv.refreshDrawableState();
                     }
                 });
 

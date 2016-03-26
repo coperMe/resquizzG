@@ -1,20 +1,81 @@
 package com.adm.coper.resquizzgotham.Activities;
 
 import android.app.Activity;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+import android.widget.TabHost;
 
+import com.adm.coper.resquizzgotham.POJO.Score;
+import com.adm.coper.resquizzgotham.POJO.ScoreAdapter;
+import com.adm.coper.resquizzgotham.POJO.User;
 import com.adm.coper.resquizzgotham.R;
+
+import java.util.Comparator;
+import java.util.PriorityQueue;
 
 
 public class ScoresActivity extends Activity {
+
+    private PriorityQueue<Score> scoreQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scores);
         getActionBar().setDisplayHomeAsUpEnabled(true);
+
+        TabHost th = (TabHost) findViewById(R.id.tabHost);
+
+        th.setup();
+        TabHost.TabSpec tsName = th.newTabSpec("Tab1");
+        tsName.setContent(R.id.tLocal);
+        tsName.setIndicator("Local");
+        th.addTab(tsName);
+
+        th.setup();
+        TabHost.TabSpec tsFriends = th.newTabSpec("Tab2");
+        tsFriends.setContent(R.id.tFriends);
+        tsFriends.setIndicator("Friends");
+        th.addTab(tsFriends);
+
+        setUpQueue();
+
+        //setUpContent();
+    }
+
+    private void setUpQueue() {
+
+        this.scoreQueue = new PriorityQueue<Score>(1, new Comparator<Score>() {
+            @Override
+            public int compare(Score lhs, Score rhs) {
+                if(rhs.getScore() > lhs.getScore())
+                    return -1;
+                else
+                    return 1;
+            }
+        });
+
+    }
+
+    private void setUpContent() {
+
+        Score []sco = new Score[]{
+                new Score(new User(),9000),
+                new Score(new User(2, "Jane Doe", null), 2500)
+        };
+
+        ScoreAdapter adapter = new ScoreAdapter(this,
+                                                R.layout.lv_item_row,
+                                                sco);
+
+        ListView lv = (ListView) findViewById(R.id.lvLocalScores);
+        ListView lv2 = (ListView) findViewById(R.id.lvFriendsScores);
+
+        lv.setAdapter(adapter);
+
     }
 
     @Override
@@ -37,5 +98,11 @@ public class ScoresActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu){
+        ///TODO
+        return true;
     }
 }

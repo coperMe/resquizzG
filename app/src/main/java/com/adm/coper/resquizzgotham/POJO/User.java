@@ -3,6 +3,7 @@ package com.adm.coper.resquizzgotham.POJO;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by coper on 19/02/16.
@@ -11,28 +12,28 @@ public class User implements Serializable{
 
     private int numCalls;
     private String name;
-    private ArrayList<String> friends;
+    private List<String> friends;
 
     public User(){
 
-        this.numCalls = 2;
         this.name = "John Doe";
+        this.numCalls = 2;
         this.friends = new ArrayList<String>();
 
     }
 
     public User(User right){
 
-        this.numCalls = right.numCalls;
         this.name = right.getName();
+        this.numCalls = right.numCalls;
         this.friends = right.getFriends();
 
     }
 
-    public User(int newNumCalls, String newName, ArrayList<String> newFriends){
+    public User(int newNumCalls, String newName, List<String> newFriends){
 
-        this.numCalls = newNumCalls;
         this.name = newName;
+        this.numCalls = newNumCalls;
         this.friends = newFriends;
 
     }
@@ -43,7 +44,13 @@ public class User implements Serializable{
 
     }
 
-    public ArrayList<String> getFriends(){
+    public int getNumCalls(){
+
+        return this.numCalls;
+
+    }
+
+    public List<String> getFriends(){
 
         return this.friends;
 
@@ -61,7 +68,7 @@ public class User implements Serializable{
 
     }
 
-    public void setFriends(ArrayList<String> newFriends){
+    public void setFriends(List<String> newFriends){
 
         this.friends = newFriends;
 
