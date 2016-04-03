@@ -3,6 +3,7 @@ package com.adm.coper.resquizzgotham.Activities;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -61,8 +62,11 @@ public class SettingsActivity extends Activity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent inn = new Intent(this,CreditsActivity.class);
+            startActivity(inn);
             return true;
         }
+
 
         return super.onOptionsItemSelected(item);
     }

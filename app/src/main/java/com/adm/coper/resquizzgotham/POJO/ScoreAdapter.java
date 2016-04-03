@@ -52,8 +52,8 @@ public class ScoreAdapter extends ArrayAdapter<Score> {
         }
 
         Score sc = data[position];
-        holder.tvIRName.setText(sc.getPlayer().getName().toString());
-        holder.tvIRScore.setText(sc.getScore());
+        holder.tvIRName.setText(sc.getPlayer().getName());
+        holder.tvIRScore.setText(String.valueOf(sc.getScore()));
 
         return row;
     }

@@ -3,11 +3,11 @@
 
     <string name="action_settings">Settings</string>
     <string name="action_credits">Credits</string>
-    
+
     <string name="title_activity_play">Play</string>
     <string name="title_activity_scores">Scores</string>
     <string name="title_activity_settings">Settings</string>
-    
+
     <string name="btPlayText">Play</string>
     <string name="btScoresText">Scores</string>
     <string name="btSettingsText">Settings</string>
@@ -23,4 +23,5 @@
     <string name="tvSettingsHowMany">How many times can you call Alfred:</string>
     <string name="btAddFriend">Add friend</string>
     <string name="btSaveText">Save</string>
+    <string name="title_activity_login">LoginActivity</string>
 </resources>
