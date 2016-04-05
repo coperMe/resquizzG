@@ -41,19 +41,19 @@ public class ScoreAdapter extends ArrayAdapter<Score> {
             row = inflater.inflate(layoutResourceId, parent, false);
 
             holder = new ScoreHolder();
-            holder.tvIRName = (TextView)row.findViewById(R.id.tvIR_name);
-            holder.tvIRScore = (TextView)row.findViewById(R.id.tvIR_score);
+            holder.tvIRName = (TextView) row.findViewById(R.id.tvIR_name);
+            holder.tvIRScore = (TextView) row.findViewById(R.id.tvIR_score);
 
             row.setTag(holder);
         }
         else
         {
-            holder = (ScoreHolder)row.getTag();
+            holder = (ScoreHolder) row.getTag();
         }
 
-        Score sc = data[position];
-        holder.tvIRName.setText(sc.getPlayer().getName());
-        holder.tvIRScore.setText(String.valueOf(sc.getScore()));
+        Score sc = getItem(position);
+        holder.tvIRName.setText( sc.getPlayer().getName() );
+        holder.tvIRScore.setText( String.valueOf(sc.getScore()) );
 
         return row;
     }
