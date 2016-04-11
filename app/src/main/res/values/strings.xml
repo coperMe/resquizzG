@@ -24,4 +24,7 @@
     <string name="btAddFriend">Add friend</string>
     <string name="btSaveText">Save</string>
     <string name="title_activity_login">LoginActivity</string>
+
+
+    <string name="facebook_app_id">491017107748799</string>
 </resources>

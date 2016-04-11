@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.adm.coper.resquizzgotham.POJO.User;
 import com.adm.coper.resquizzgotham.R;
+import com.facebook.FacebookSdk;
 
 
 public class MainActivity extends Activity {
@@ -19,6 +20,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //init facebook sdk -> dependences added ar build.grande/app
+        FacebookSdk.sdkInitialize(getApplicationContext());
 
         TextView tv = (TextView) findViewById(R.id.tvPlayersName);
         TextView tv2 = (TextView) findViewById(R.id.tvNumCalls);
